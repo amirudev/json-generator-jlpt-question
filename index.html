@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JLPT AYO - Question Maker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="row">
+        <div class="col p-2">
+            <textarea id="json-container" class="w-100 h-100 p-2">
+
+            </textarea>
+            <button class="btn btn-primary" id="copybutton">Copy JSON Text</button>
+            <button class="btn btn-success" id="savebutton">Save to local</button>
+        </div>
+        <div class="col">
+            <div class="mb-3">
+                <label for="level">Level : </label>
+                <select class="form-select" id="level">
+                    <option value="n5">N5</option>
+                    <option value="n4">N4</option>
+                    <option value="n3">N3</option>
+                    <option value="n2">N2</option>
+                    <option value="n1">N1</option>
+                    <option value="hk">Hiragana Katakana</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="ididentifier" class="form-label">ID Identifier</label>
+                <input type="text" class="form-control" id="ididentifier">
+                <div id="ididentifier-info" class="form-text">ID harus sama dengan soal lainnya dalam satu kelas, harus unik dengan kelas lainnya</div>
+            </div>
+            <div class="mb-3">
+                <label for="question" class="form-label">Pertanyaan</label>
+                <input type="text" class="form-control" id="question">
+            </div><div class="mb-3">
+                <label for="question" class="form-label">Bantuan Pertanyaan</label>
+                <input type="text" class="form-control" id="question_helper">
+            </div>
+            <div class="mb-3">
+                <label for="text" class="form-label">Teks ( opsional )</label>
+                <textarea name="text" id="text" class="w-100" rows="10"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="answer" class="form-label">Jawaban</label>
+                <input type="text" class="form-control" id="answer">
+            </div>
+            <div class="mb-3">
+                <label for="quiz_type" class="form-label">Jenis Quiz</label>
+                <select class="form-select" id="quiz_type" name="quiz_type">
+                    <option value="1">Short Answer ( 6 Options (nested) )</option>
+                    <option value="2">Long Answer ( 4 Options )</option>
+                    <option value="3">True / False ( 4 Options )</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="options" class="form-label">Pilihan Jawaban</label>
+                <textarea name="text" id="options" class="w-100" rows="5"></textarea>
+                <div id="options-info" class="form-text">Pisahkan dengan koma</div>
+            </div>
+            <div class="mb-3">
+                <label for="options" class="form-label">Pilihan Jawaban Keterangan</label>
+                <textarea name="text" id="options_helper" class="w-100 p-2" rows="5" placeholder="Hanya diisi apabila tipe quiz adalah short answer 6 options"></textarea>
+                <div id="options-info" class="form-text">Pisahkan dengan koma</div>
+            </div>
+            <button class="btn btn-primary" id="generate">Generate</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
